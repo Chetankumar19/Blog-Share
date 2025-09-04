@@ -5,11 +5,11 @@ const Body = () => {
     <section className="text-center py-16 px-4">
       {/* Heading */}
       <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-        Explore the new thoughts
+        Explore the new word of thoughts
       </h1>
 
       {/* Subheading */}
-      <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+      <p className="text-lg md:text-xl  text-gray-600 mb-8 max-w-2xl mx-auto">
         Dive into insightful blogs, fresh perspectives, and creative ideas that
         inspire you to think differently every day.
       </p>
@@ -19,9 +19,9 @@ const Body = () => {
         <input
           type="text"
           placeholder="Search articles, topics..."
-          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className=" w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <button className=" px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition">
+        <button className=" px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition cursor-pointer">
           Search
         </button>
       </div>

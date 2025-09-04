@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
 
   return (
-    <footer className="bg-gray-50 text-black py-8 px-4 ">
+    <footer className=" text-black py-8 px-4  shadow-2xl bg-gray-200">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         {/* Left: Logo or Site Name */}
         <div className="text-lg font-semibold">
@@ -12,9 +13,9 @@ const Footer = () => {
 
         {/* Center: Navigation or Links */}
         <div className="flex space-x-6 text-black">
-          <a href="#about" className="hover:font-bold transition">
+          <Link to="/about" className="hover:font-bold transition">
             About
-          </a>
+          </Link>
           <a href="#contact" className="hover:font-bold transition">
             Contact
           </a>
