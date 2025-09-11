@@ -13,7 +13,7 @@ const App =()=> {
       {/* Header */}
       <Header />
       {/* Body: grows to fill space */}
-      <main className="flex-grow">
+      <main className="flex-grow pt-16">
         <Outlet/>
       </main>
       

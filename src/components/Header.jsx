@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
-  const location = useLocation(); // <-- import and use this
+  const location = useLocation();
   const data = useContext(LoggedUserContext);
   const loginUser = useSelector((state) => state.loggedUser);
 
@@ -14,22 +14,42 @@ const Header = () => {
     if (loginUser.isLogged && location.pathname === "/signIn") {
       navigate("/", { replace: true });
     }
-  }, [loginUser.isLogged, location.pathname, navigate]); // <-- fix dependency array
+  }, [loginUser.isLogged, location.pathname, navigate]);
 
   return (
-    <header className="w-full flex justify-between items-center px-6 py-4 bg-gray-50 shadow-md">
-      {/* Left: Logo */}
-      <Link
-        to="/"
-        className="flex items-center space-x-2 text-xl font-bold text-gray-800"
-      >
-        <img
-          src={Logo}
-          alt="Logo"
-          className="w-15 h-10 rounded-full object-cover"
-        />
-        <span>Thoughts</span>
-      </Link>
+    <header className="w-full flex justify-between items-center px-6 py-4 bg-gray-50 shadow-md fixed">
+      {/* Left Section: Logo + Nav */}
+      <div className="flex items-center space-x-6">
+        {/* Logo + Name */}
+        <Link
+          to="/"
+          className="flex items-center space-x-2 text-xl font-bold text-gray-800"
+        >
+          <img
+            src={Logo}
+            alt="Logo"
+            className="w-15 h-10 rounded-full object-cover"
+          />
+          <span>Thoughts</span>
+        </Link>
+
+        {/* Navigation links (separated with |) */}
+        {/* Navigation links (hidden on small screens) */}
+        <nav className="hidden md:flex items-center text-gray-700 font-medium space-x-2">
+          <Link to="/editorial" className="hover:text-blue-600 transition">
+            Editorial
+          </Link>
+          <span>|</span>
+          <Link to="/top-rated" className="hover:text-blue-600 transition">
+            Top Rated
+          </Link>
+          <span>|</span>
+          <Link to="/search" className="hover:text-blue-600 transition">
+            serach
+          </Link>
+        </nav>
+
+      </div>
 
       {/* Right Section */}
       <div className="flex items-center space-x-4">
@@ -41,7 +61,6 @@ const Header = () => {
               alt="Profile"
               className="w-10 h-10 rounded-full object-cover"
             />
-
             {/* Name */}
             <span className="text-gray-700 font-medium">
               {data.loggedInUserName}

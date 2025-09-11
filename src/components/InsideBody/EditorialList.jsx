@@ -55,15 +55,15 @@ const articles = [
 
 const EditorialList = () => {
   return (
-    <div className="max-w-4xl mx-auto p-5">
+    <div className="max-w-4xl mx-auto p-5 shadow round bg-gray-50 m-1 ">
       <h1 className="text-4xl font-bold mb-8 text-center">
         Editorial Articles
       </h1>
-      <div className="flex flex-wrap gap-6 justify-center">
+      <div className="flex flex-wrap gap-6 justify-center w-full">
         {articles.map(({ title, about }, idx) => (
           <article
             key={idx}
-            className="flex flex-col border border-gray-300 rounded-lg shadow-sm hover:shadow-lg transition w-full sm:w-[48%] md:w-[31%]"
+            className="flex flex-col border border-gray-300 rounded-lg shadow-sm hover:shadow-2xl transition w-full sm:w-[48%] md:w-[31%]"
           >
             <h2 className="text-2xl font-semibold p-3 bg-blue-100">{title}</h2>
             <p className="text-gray-700 leading-relaxed p-5 flex-grow">

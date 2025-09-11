@@ -18,20 +18,22 @@ const SignIn = () => {
       setErrorMessage("No User found");
       return;
     }
+    const userInfo = JSON.parse(localStorage.getItem("user"));
+    console.log(Object.entries(userInfo));
     const foundUser = users.find(
-      (item) => item.email === email && item.password === password
+      (item) => item.email === email
     );
-    console.log(foundUser);
     if (!foundUser) {
       setErrorMessage("Wrong email or password");
       return;
     }
-    dispatch(login(foundUser)); // ✅ Full user object
+    
+    dispatch(login({email,password})); // ✅ Full user object
     navigate("/");
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-128px)] bg-gray-100">
+    <div className="pt-16 flex items-center justify-center min-h-[calc(100vh-128px)] bg-gray-100 ">
       <div className="w-full max-w-md bg-white p-8 rounded shadow">
         <h2 className="text-3xl font-bold mb-6 text-center">Sign In</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">

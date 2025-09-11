@@ -10,7 +10,7 @@ const Body = () => {
     <BlogForm />
   ) : (
     <div>
-      <section className="text-center py-16 px-4">
+      <section className="text-center py-20 px-8">
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
           Explore the new word of thoughts
@@ -27,14 +27,14 @@ const Body = () => {
           <input
             type="text"
             placeholder="Search articles, topics..."
-            className=" w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className=" w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
           <button className=" px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition cursor-pointer">
             Search
           </button>
         </div>
       </section>
-      <EditorialList />
+      
     </div>
   );
 };

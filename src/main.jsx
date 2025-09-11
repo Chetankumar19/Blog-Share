@@ -8,6 +8,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Register from "./components/Register.jsx";
 import Body from "./components/Body.jsx";
 import About from "./components/About.jsx";
+import MostViewBlog from "./components/InsideBody/MostViewBlog.jsx";
+import EditorialList from "./components/InsideBody/EditorialList.jsx";
+import ChatGPTSearch from "./components/InsideBody/ChatGptSearch.jsx";
 // import { UserProvider } from "./utils/UserContext.jsx";
 
 const appRouter = createBrowserRouter([
@@ -31,6 +34,18 @@ const appRouter = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+      {
+        path: "/top-rated",
+        element: <MostViewBlog />,
+      },
+      {
+        path: "/editorial",
+        element: <EditorialList />,
+      },
+      {
+        path: "/search",
+        element: <ChatGPTSearch />,
+      }
     ],
   },
 ]);

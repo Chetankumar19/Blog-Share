@@ -33,6 +33,8 @@ const Register = () => {
       (item) => item.email === email
     );
     if (isAlreadyContain) setErrorMessage("User already Available");
+    localStorage.setItem("user", JSON.stringify({ email, userName, password }));
+
     dispatch(addUser({ email, userName, password }));
 
     // Clear form inputs
